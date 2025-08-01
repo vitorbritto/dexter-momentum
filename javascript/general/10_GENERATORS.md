@@ -1,5 +1,0 @@
-# Generators
-
-## Generators
-
-## Async iteration

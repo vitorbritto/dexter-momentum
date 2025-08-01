@@ -5,38 +5,18 @@ This repository is a kind of lab of codes where I try to create more efficient a
 ## Summary
 
 -   [aws](aws/)
--   [bash](bash/)
 -   [c](c/)
--   [cplusplus](cplusplus/)
--   [csharp](csharp/)
--   [clojure](clojure/)
 -   [css](css/)
--   [design-patterns](design-patterns/)
--   [docker](docker/)
 -   [erlang](erlang/)
 -   [front-end](front-end/)
--   [go](go/)
--   [haskell](haskell/)
--   [java](java/)
+-   [go](go/) -> TODO
+-   [haskell](haskell/) -> TODO
 -   [javascript](javascript/)
--   [kafka](kafka/)
--   [kubernetes](kubernetes/)
--   [kotlin](kotlin/)
--   [lua](lua/)
 -   [nodejs](nodejs/)
--   [php](php/)
--   [postgresql](postgresql/)
--   [python](python/)
+-   [python](python/) -> TODO
 -   [react](react/)
--   [ruby](ruby/)
 -   [rust](rust/)
--   [scala](scala/)
--   [shell](shell/)
--   [sql](sql/)
--   [swift](swift/)
 -   [typescript](typescript/)
--   [unix](unix/)
--   [zig](zig/)
 
 ## License
 
