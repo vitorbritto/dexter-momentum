@@ -1,116 +1,131 @@
-# Introdução
+# Introduction
 
-## Qual é o papel de um Desenvolvedor Front-end?
+## What is the role of a Front-end Developer?
 
-O Desenvolvedor Front-end será responsável por criar a interface de usuário de um site para garantir que ele seja visualmente agradável e fácil de usar, com forte foco em princípios de design e experiência do usuário. Você trabalhará em estreita colaboração com designers, desenvolvedores back-end e gerentes de projeto para garantir que o produto final atenda às necessidades do cliente e proporcione a melhor experiência possível para os usuários finais.
+The Front-end Developer will be responsible for creating the user interface of a website to ensure it is visually appealing and easy to use, with a strong focus on design principles and user experience. You will work closely with designers, back-end developers, and project managers to ensure the final product meets client needs and provides the best possible experience for end users.
 
-## Quais linguagens são usadas no Desenvolvimento Front-end?
+## What languages are used in Front-end Development?
 
-A parte fácil sobre a função de desenvolvedor front-end é que não há tantas opções de linguagens e tecnologias (ao contrário do desenvolvimento back-end).
+The easy part about the front-end developer role is that there aren't as many language and technology options (unlike back-end development).
 
-Como desenvolvedor front-end, você trabalhará com as seguintes tecnologias:
-	- HTML (Hypertext Markup Language): A linguagem de marcação usada para criar a estrutura da página. Todas as informações que você deseja exibir em uma página da web serão organizadas por meio do HTML.
-	- CSS (Cascading Style Sheets): A linguagem de folhas de estilo em cascata permite ajustar a forma como os elementos HTML são renderizados, melhorando o visual da sua página.
-	- JavaScript: A linguagem de programação padrão para o front-end, que permite adicionar dinamismo aos seus sites ou aplicações web. Existe uma alternativa chamada TypeScript, que é um superset tipado de JavaScript. No entanto, nesse caso, será necessário configurar um transpilador para converter seu código em JavaScript antes de executá-lo no navegador.
+As a front-end developer, you will work with the following technologies:
 
-## Quais habilidades são necessárias para um desenvolvedor Front-end?
+- HTML (Hypertext Markup Language): The markup language used to create the page structure. All information you want to display on a web page will be organized through HTML.
+- CSS (Cascading Style Sheets): The cascading style sheet language allows you to adjust how HTML elements are rendered, improving the visual appearance of your page.
+- JavaScript: The standard programming language for the front-end, which allows you to add dynamism to your websites or web applications. There is an alternative called TypeScript, which is a typed superset of JavaScript. However, in this case, you'll need to configure a transpiler to convert your code to JavaScript before running it in the browser.
 
-As principais habilidades necessárias para se tornar um desenvolvedor front-end são HTML, CSS e JavaScript. As demais também são importantes, mas sem essas três básicas, não é possível aplicar nenhuma das outras.
+## What skills are needed for a Front-end developer?
 
-A lista completa de habilidades que você deve considerar para evoluir como desenvolvedor front-end é a seguinte:
-	1.	Compreensão das tecnologias principais: HTML, CSS e JavaScript.
-	2.	Acessibilidade: Saber como isso pode afetar a experiência dos usuários.
-	3.	Controle de versão: Ter familiaridade com ferramentas como o Git.
-	4.	Design responsivo: Implementar layouts que se adaptam a diferentes dispositivos e tamanhos de tela.
-	5.	Experiência do usuário (UX): Entender os princípios básicos de UX.
-	6.	SEO: Saber como funciona a otimização para mecanismos de busca e como aplicá-la no código.
-	7.	APIs RESTful: Entender os conceitos básicos e como consumi-las.
-	8.	Testes e depuração: Aplicar práticas de teste e debugar de forma eficiente.
-	9.	Ferramentas de desenvolvedor: Dominar as DevTools dos navegadores para inspecionar, depurar e otimizar o código.
-	10.	Frameworks: Ter um framework principal de uso (como React ou Vue) e conhecer outros de forma geral.
-	11.	Performance Web: Entender otimizações de desempenho e métricas como Web Vitals.
-	12.	TypeScript: Saber como funciona e quando usá-lo.
+The main skills needed to become a front-end developer are HTML, CSS, and JavaScript. The others are also important, but without these three basics, it's not possible to apply any of the others.
 
-Dominar essas habilidades básicas vai te preparar para qualquer entrevista para vaga de front-end e também vai melhorar seu desempenho na função atual.
+The complete list of skills you should consider to evolve as a front-end developer is as follows:
 
-## Desenvolvimento Front-end é realmente programação?
+1. Understanding of core technologies: HTML, CSS, and JavaScript.
+2. Accessibility: Knowing how this can affect user experience.
+3. Version control: Being familiar with tools like Git.
+4. Responsive design: Implementing layouts that adapt to different devices and screen sizes.
+5. User experience (UX): Understanding basic UX principles.
+6. SEO: Knowing how search engine optimization works and how to apply it in code.
+7. RESTful APIs: Understanding basic concepts and how to consume them.
+8. Testing and debugging: Applying testing practices and debugging efficiently.
+9. Developer tools: Mastering browser DevTools to inspect, debug, and optimize code.
+10. Frameworks: Having a main framework for use (like React or Vue) and knowing others in general.
+11. Web Performance: Understanding performance optimizations and metrics like Web Vitals.
+12. TypeScript: Knowing how it works and when to use it.
 
-Os desenvolvedores front-end realmente programam? A resposta é sim, com certeza.
+Mastering these basic skills will prepare you for any front-end job interview and will also improve your performance in your current role.
 
-O fato de que desenvolvedores front-end produzem uma saída visual (graças aos designs criados por outras pessoas) às vezes confunde alguns, levando-os a pensar que front-end não é programação de verdade. Mas isso está longe da realidade.
+## Is Front-end Development really programming?
 
-Como desenvolvedor front-end, você estará codando o tempo todo.
+Do front-end developers really program? The answer is yes, absolutely.
 
-Embora em algumas empresas o desenvolvedor front-end também atue como designer ou engenheiro de UX, esse não é o perfil típico. O foco do seu aprendizado deve ser voltado para código — ou seja, boas práticas de programação, design patterns de software, arquitetura front-end, entre outros.
+The fact that front-end developers produce visual output (thanks to designs created by others) sometimes confuses some people, leading them to think that front-end isn't real programming. But this is far from reality.
+
+As a front-end developer, you will be coding all the time.
+
+Although in some companies the front-end developer also acts as a designer or UX engineer, this is not the typical profile. Your learning focus should be oriented towards code — that is, good programming practices, software design patterns, front-end architecture, among others.
 
 # Roadmap
 
-## 🧱 1. Fundamentos da Web
-- Como a web funciona: HTTP, navegadores, servidores, DNS.
-- Terminal / CLI: comandos básicos (cd, ls, mkdir, rm...).
-- Controle de versão (Git): clone, commit, push, branch, merge, rebase.
+## 🧱 1. Web Fundamentals
 
-## 🧑‍💻 2. HTML, CSS e JavaScript
+- How the web works: HTTP, browsers, servers, DNS.
+- Terminal / CLI: basic commands (cd, ls, mkdir, rm...).
+- Version control (Git): clone, commit, push, branch, merge, rebase.
+
+## 🧑‍💻 2. HTML, CSS and JavaScript
 
 ### HTML
-- Semântica (tags como <article>, <section>, <nav>)
-- Acessibilidade (uso correto de ARIA, labels, alt, etc.)
-- Forms (input types, validação nativa)
+
+- Semantics (tags like <article>, <section>, <nav>)
+- Accessibility (proper use of ARIA, labels, alt, etc.)
+- Forms (input types, native validation)
 
 ### CSS
+
 - Flexbox, Grid Layout
-- Media Queries (responsividade)
+- Media Queries (responsiveness)
 - Pseudo-classes (:hover, :nth-child)
 - Position, Display, Box Model
 
 ### JavaScript
-- Tipos, funções, escopo, hoisting, closures
-- DOM e eventos (addEventListener)
+
+- Types, functions, scope, hoisting, closures
+- DOM and events (addEventListener)
 - Fetch API / Promises / async-await
 - ES6+ features (destructuring, spread, arrow functions)
 
-## 🛠 3. Ferramentas de Desenvolvimento
-- Package Managers: npm, yarn e pnpm
-- Bundlers: Vite, Webpack, Parcel
-- Linters e Formatadores: ESLint, Prettier, BiomeJs
-- DevTools do navegador: performance, network, debugger
-	• Compiler: OXC
+## 🛠 3. Development Tools
 
-## 📦 4. Versionamento e Deploy
+- Package Managers: npm, yarn and pnpm
+- Bundlers: Vite, Webpack, Parcel
+- Linters and Formatters: ESLint, Prettier, BiomeJs
+- Browser DevTools: performance, network, debugger
+  • Compiler: OXC
+
+## 📦 4. Versioning and Deploy
+
 - GitHub
-- Hospedagem: Vercel e Cloudflare Pages
+- Hosting: Vercel and Cloudflare Pages
 - CI/CD: GitHub Actions
 
-## ⚛️ 5. Frameworks de Front-end
-- React (mais usado no mercado)
+## ⚛️ 5. Front-end Frameworks
+
+- React (most used in the market)
 - JSX, Props, State, Hooks (useState, useEffect, useContext)
-- Componentes controlados e não controlados
+- Controlled and uncontrolled components
 - React Router, Forms, Context API
 
-## 🧰 6. Gerenciamento de Estado (em React)
+## 🧰 6. State Management (in React)
+
 - Local (useState, useReducer)
 - Global: Zustand, Redux Toolkit, Jotai, Recoil
 - Server state: TanStack Query (React Query)
 
-## 🌐 7. Consumo de APIs
+## 🌐 7. API Consumption
+
 - REST: fetch, axios
 - GraphQL: Apollo Client / Server
 
-## 🧪 8. Testes
-- Unitários: Vitest, Jest
-- Integração: React Testing Library
+## 🧪 8. Testing
+
+- Unit: Vitest, Jest
+- Integration: React Testing Library
 - E2E: Playwright, Cypress
 
-## 🎨 9. Estilização
+## 🎨 9. Styling
+
 - CSS Modules, Sass, TailwindCSS
 - Styled Components / Emotion
 
-## 🔐 10. Autenticação e Segurança 🔥
+## 🔐 10. Authentication and Security 🔥
+
 - Cookies vs LocalStorage
 - CSRF, XSS, CORS
 - JWT, OAuth
 
-## 🔎 11. Performance e Otimização 🔥
+## 🔎 11. Performance and Optimization 🔥
+
 - Lazy loading, Code splitting
 - Web Vitals (LCP, FID, CLS)
 - Server Side Rendering (SSR)
@@ -118,23 +133,25 @@ Embora em algumas empresas o desenvolvedor front-end também atue como designer 
 - Lighthouse, Bundle Analyzer
 
 ## 📱 12. Mobile Development
+
 - React Native
 - Ionic Framework
 - PWA (Progressive Web Apps)
 - Manifest, Service Workers
 - Offline mode, Push Notifications
 
-## 📚 13. Práticas Avançadas 🔥
-- Arquitetura de Componentes
-- Design Patterns (como Render Props, HOC, Compound Components)
+## 📚 13. Advanced Practices 🔥
+
+- Component Architecture
+- Design Patterns (like Render Props, HOC, Compound Components)
 - Monorepos (NX, Turborepo)
 - Internationalization (i18n)
 - Accessibility (A11y)
 - Browser APIs:
- 	- Web Sockets
- 	- Server Sent Events
- 	- Location
- 	- Notifications
- 	- Device Orientation
- 	- Payments
- 	- Credentials
+  - Web Sockets
+  - Server Sent Events
+  - Location
+  - Notifications
+  - Device Orientation
+  - Payments
+  - Credentials
