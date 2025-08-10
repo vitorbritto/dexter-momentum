@@ -1,3 +1,9 @@
+// ------------------------------------------------------
+// HOISTING
+// ------------------------------------------------------
+
+// Hoisting is the process of moving function declarations to the top of their scope during the compilation phase.
+
 // Function Declaration Hoisting
 hoistedFunction(); // Works because function declarations are hoisted
 
@@ -7,28 +13,28 @@ function hoistedFunction() {
 
 // Function Expression Hoisting
 try {
-  notHoistedFunction(); // Error: notHoistedFunction is not a function
+  notHoistedFunction(); // ReferenceError: notHoistedFunction is not defined
 } catch (e) {
   console.log(e);
 }
 
-var notHoistedFunction = function () {
+const notHoistedFunction = () => {
   console.log("I am a function expression and not hoisted!");
 };
 
 notHoistedFunction(); // Works now, after the assignment
 
-// greetingUser(); // undefined()
+greetingUser(); // undefined() -> Uncaught TypeError: greetingUser is not a function
 
-// var greetingUser = function greetings() {
-//     console.log("Hello!");
-// };
+var greetingUser = function () {
+  console.log("Hello!");
+};
 
 // EC
 //     GEC
 //         CP:
 //             greetingUser: undefined
-//             greetings: "0xA432r32T" (heap)
+//             fn: "0xA432r32T" (heap)
 //         EP:
 //             greetingUser: Execute
 //             [CRASH]
@@ -36,7 +42,7 @@ notHoistedFunction(); // Works now, after the assignment
 //         CP:
 //         EP:
 
-var greetingUser = function greetings() {
+var greetingUser = function () {
   console.log("Hello!");
 };
 
@@ -46,7 +52,7 @@ greetingUser();
 //     GEC
 //         CP:
 //             greetingUser: undefined
-//             greetings: "0xA432r32T" (heap)
+//             fn: "0xA432r32T" (heap)
 //         EP:
 //             greetingUser: Execute
 //     FEC
