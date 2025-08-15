@@ -188,6 +188,17 @@ obj.toString();
 
 The event loop is a mechanism that allows JavaScript to perform non-blocking operations by offloading operations to the system and executing callbacks when they are ready.
 
+| Element                           | Meaning                                                                     | Common Synonyms / Notes                    | Examples                                                                      |
+| --------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------ | ----------------------------------------------------------------------------- |
+| **Event Loop**                    | Core mechanism coordinating execution of synchronous & async code           | —                                          | Runs tasks, drains microtasks, triggers rendering                             |
+| **Call Stack**                    | Stack of execution contexts where JS code runs                              | Stack                                      | Current function calls, expressions, loops                                    |
+| **Web APIs** (Browser)            | Host-provided async features                                                | Browser APIs, Host Environment APIs        | `setTimeout`, `fetch`, DOM events, `requestAnimationFrame`                    |
+| **libuv APIs** (Node.js)          | Node’s async I/O system (libuv)                                             | —                                          | Timers, file system ops, networking, DNS                                      |
+| **Callback Queue**                | Queue of macrotasks waiting to run                                          | Task Queue, Message Queue, Macrotask Queue | `setTimeout`, `setInterval`, `setImmediate` (Node), DOM events, `postMessage` |
+| **Microtask Queue**               | Queue of microtasks that run immediately after each task before next render | Job Queue, Promise Jobs, Microtask queue   | `Promise.then/catch/finally`, `queueMicrotask`, `MutationObserver`            |
+| **process.nextTick Queue** (Node) | Special high-priority microtask queue in Node.js                            | Next Tick Queue                            | `process.nextTick()`                                                          |
+| **Render Phase** (Browser)        | Browser’s visual update step after microtasks are drained                   | Paint, Reflow/Repaint                      | `requestAnimationFrame` callbacks before paint                                |
+
 ```js
 // Example: Event Loop in JavaScript
 
