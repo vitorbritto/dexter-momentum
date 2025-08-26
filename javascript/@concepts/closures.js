@@ -1,10 +1,107 @@
-// ------------------------------------------------------
-// CLOSURES
-// ------------------------------------------------------
+// Lexical Scope defines how variable names are resolved in nested functions.
+// Nested (child) functions haves access to the scope of their parent functions.
+// This is often confused with closure, but lexical scope is only an important part of closure.
 
-// A closure is a function that has access to its own scope, the outer function's scope, and the global scope. Closures allow functions to retain access to variables from their containing (lexical) scope even after that scope has finished executing.
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+// LEXICAL SCOPE
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-// Counter
+// Global Scope
+// let x = 1;
+
+// const parentFunction = () => {
+//   // Local Scope
+//   let myValue = 2;
+
+//   console.log(x);
+//   console.log(myValue);
+
+//   const childFunction = () => {
+//     console.log((x += 5));
+//     console.log((myValue += 1));
+//   };
+
+//   return childFunction();
+// };
+
+// parentFunction();
+
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+// CLOSURE
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+// A Closure is a function that have acces to the parent scope,
+// even after the parent function has been executed.
+
+let x = 1;
+
+const parentFunction = () => {
+  // Local Scope
+  let myValue = 2;
+
+  console.log(x);
+  console.log(myValue);
+
+  const childFunction = () => {
+    console.log((x += 5));
+    console.log((myValue += 1));
+  };
+
+  return childFunction;
+};
+
+const result = parentFunction();
+
+result();
+result();
+result();
+
+console.log(x);
+
+// Reference Error:
+// private variable in function scope. Not acessible by global scope.
+console.log(myValue);
+
+// IIFE (Immediatily Invoked Function Expression)
+const privateCounter = (() => {
+  let count = 0;
+
+  console.log("Initial value: ", count);
+
+  return () => {
+    count += 1;
+    console.log(count);
+  };
+})();
+
+privateCounter();
+privateCounter();
+privateCounter();
+privateCounter();
+privateCounter();
+
+// Example
+const credits = ((num) => {
+  console.log("Initial credits: ", num);
+
+  return () => {
+    num -= 1;
+
+    if (num > 0) {
+      console.log("playing game, current credit: ", num);
+    }
+
+    if (num <= 0) {
+      console.log("not enough credits");
+    }
+  };
+})(5);
+
+credits();
+credits();
+credits();
+credits();
+credits();
 
 function createCounter() {
   let count = 0;
