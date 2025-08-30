@@ -1,0 +1,123 @@
+body {
+  background: #f8fafc;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  color: #1e293b;
+}
+main {
+  max-width: 680px;
+  margin: 48px auto 0 auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px 0 #0001;
+  padding: 36px 32px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  margin-bottom: 28px;
+  color: #2563eb;
+  letter-spacing: -1px;
+  text-align: center;
+}
+.font-demo-row {
+  margin-bottom: 22px;
+  text-align: center;
+}
+#demoText {
+  display: inline-block;
+  padding: 10px 0;
+  color: #334155;
+  background: #f3f4f6;
+  border-radius: 8px;
+  min-width: 320px;
+  transition: font-family 0.3s;
+}
+.font-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 1.04rem;
+}
+#fontSelect {
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: 1.5px solid #e0e7ef;
+  font-size: 1.01rem;
+  background: #f8fafc;
+  color: #334155;
+  outline: none;
+  transition: border 0.2s;
+}
+#fontSelect:focus {
+  border-color: #2563eb;
+}
+#loadFontBtn {
+  padding: 8px 20px;
+  background: linear-gradient(90deg, #2563eb 60%, #60a5fa 100%);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.01rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #2563eb22;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+#loadFontBtn:hover:enabled {
+  background: linear-gradient(90deg, #1d4ed8 60%, #3b82f6 100%);
+  box-shadow: 0 4px 16px #2563eb33;
+}
+#fontStatus {
+  min-height: 1.2em;
+  margin-bottom: 8px;
+  color: #059669;
+  font-size: 1.01rem;
+  font-weight: 500;
+  text-align: center;
+  transition: color 0.2s;
+}
+#fontStatus.error {
+  color: #b91c1c;
+}
+section.instructions {
+  margin-top: 36px;
+  color: #334155;
+  font-size: 1.01rem;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 18px 16px 12px 18px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 1px 4px #2563eb11;
+}
+section.instructions strong {
+  color: #2563eb;
+  font-weight: 700;
+}
+section.instructions ul {
+  margin: 10px 0 0 20px;
+  padding: 0;
+}
+section.instructions li {
+  margin-bottom: 7px;
+  line-height: 1.6;
+}
+@media (max-width: 500px) {
+  main {
+    max-width: 98vw;
+    padding: 18px 6vw 18px 6vw;
+  }
+  #demoText {
+    min-width: 0;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 8px 0;
+  }
+  section.instructions {
+    padding: 12px 6vw 10px 6vw;
+  }
+}

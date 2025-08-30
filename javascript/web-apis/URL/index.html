@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Web APIs - URL</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: #f6f8fa;
+        font-family: "Segoe UI", Arial, sans-serif;
+        min-height: 100vh;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        background: #fff;
+        max-width: 420px;
+        margin: 0;
+        height: auto;
+        padding: 32px 28px 28px 28px;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08),
+          0 1.5px 4px rgba(0, 0, 0, 0.04);
+      }
+      h1 {
+        text-align: center;
+        color: #2d3748;
+        margin-bottom: 28px;
+        font-size: 2rem;
+        letter-spacing: 1px;
+      }
+      label {
+        display: block;
+        margin-bottom: 6px;
+        color: #374151;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+      #js-url--input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-size: 1rem;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        transition: border 0.2s;
+      }
+      #js-url--input:focus {
+        border-color: #2563eb;
+        outline: none;
+      }
+      #js-url--parse-btn {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        background: #2563eb;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        margin-bottom: 24px;
+        transition: background 0.2s;
+      }
+      #js-url--parse-btn:hover {
+        background: #1d4ed8;
+      }
+      .result-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 14px;
+        gap: 10px;
+      }
+      .result-group label {
+        flex: 0 0 90px;
+        margin-bottom: 0;
+        font-size: 0.98rem;
+      }
+      .result-group input {
+        flex: 1 1 auto;
+        padding: 8px 10px;
+        border: 1px solid #e5e7eb;
+        border-radius: 5px;
+        background: #f3f4f6;
+        color: #374151;
+        font-size: 0.98rem;
+        outline: none;
+      }
+      @media (max-width: 500px) {
+        main {
+          max-width: 98vw;
+          padding: 16px 6vw 18px 6vw;
+        }
+        .result-group label {
+          flex: 0 0 70px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>URL API Experiment</h1>
+
+      <label for="js-url--input">Enter the URL:</label>
+      <input type="text" id="js-url--input" />
+
+      <button id="js-url--parse-btn">Parse</button>
+
+      <div class="result-group">
+        <label for="js-url--hash">Hash:</label>
+        <input id="js-url--hash" disabled />
+      </div>
+      <div class="result-group">
+        <label for="js-url--host">Host:</label>
+        <input id="js-url--host" disabled />
+      </div>
+      <div class="result-group">
+        <label for="js-url--hostname">Hostname:</label>
+        <input id="js-url--hostname" disabled />
+      </div>
+      <div class="result-group">
+        <label for="js-url--href">Href:</label>
+        <input id="js-url--href" disabled />
+      </div>
+      <div class="result-group">
+        <label for="js-url--origin">Origin:</label>
+        <input id="js-url--origin" disabled />
+      </div>
+      <div class="result-group">
+        <label for="js-url--pathname">Pathname:</label>
+        <input id="js-url--pathname" disabled />
+      </div>
+      <div class="result-group">
+        <label for="js-url--protocol">Protocol:</label>
+        <input id="js-url--protocol" disabled />
+      </div>
+      <div class="result-group">
+        <label for="js-url--search">Search:</label>
+        <input id="js-url--search" disabled />
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

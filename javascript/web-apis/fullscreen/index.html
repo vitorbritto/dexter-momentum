@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Web APIs - Fullscreen Experiment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Fullscreen API Experiment</h1>
+      <div id="fullscreenBox">
+        <span>Click the button to enter fullscreen!</span>
+      </div>
+      <div>
+        <button id="enterBtn">Enter Fullscreen</button>
+        <button id="exitBtn" disabled>Exit Fullscreen</button>
+      </div>
+      <div id="status">Status: Not in fullscreen</div>
+      <section style="margin-top: 32px; color: #334155; font-size: 0.98rem">
+        <strong>Instructions:</strong>
+        <ul style="margin: 8px 0 0 18px">
+          <li>
+            Click <b>Enter Fullscreen</b> to make the blue box go fullscreen.
+          </li>
+          <li>
+            Click <b>Exit Fullscreen</b> or press <kbd>Esc</kbd> to leave
+            fullscreen mode.
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

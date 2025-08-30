@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Web APIs - Web Speech</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Web Speech API Experiment</h1>
+      <section>
+        <h2>Speech Synthesis (Text to Speech)</h2>
+        <textarea
+          id="speakText"
+          rows="4"
+          cols="40"
+          placeholder="Enter the text to speak..."
+        >
+Hello there, this is an experiment with the Web Speech API!</textarea
+        >
+        <div style="display: flex; gap: 8px; margin: 8px 0">
+          <button id="speakBtn">Speak</button>
+          <button id="stopSpeakBtn">Stop</button>
+        </div>
+        <label for="voiceSelect">Voice:</label>
+        <select id="voiceSelect"></select>
+        <label for="rateRange">Speed:</label>
+        <input
+          type="range"
+          id="rateRange"
+          min="0.5"
+          max="2"
+          value="1"
+          step="0.1"
+        />
+        <span id="rateValue">1</span>
+      </section>
+      <hr style="margin: 24px 0" />
+      <section>
+        <h2>Speech Recognition (Speech to Text)</h2>
+        <button id="startRecBtn">Start Recognition</button>
+        <button id="stopRecBtn" disabled>Stop</button>
+        <p id="recStatus">Status: stopped</p>
+        <textarea
+          id="recResult"
+          rows="4"
+          cols="40"
+          placeholder="What you say will appear here..."
+        ></textarea>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

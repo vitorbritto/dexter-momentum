@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Web APIs - File System Experiment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>File System Access API Experiment</h1>
+      <div class="file-system-controls">
+        <button id="openFileBtn">Open File</button>
+        <button id="saveFileBtn">Save File</button>
+      </div>
+      <div class="file-info-row">
+        <span>Opened File:</span>
+        <span id="fileName">None</span>
+      </div>
+      <textarea
+        id="fileContent"
+        rows="12"
+        cols="60"
+        placeholder="File content will appear here..."
+      ></textarea>
+      <div
+        id="fs-support"
+        style="display: none; color: #b91c1c; margin-top: 12px"
+      >
+        Sorry, your browser does not support the File System Access API.
+      </div>
+      <section class="instructions" style="margin-top: 32px">
+        <strong>Instructions:</strong>
+        <ul>
+          <li>
+            Click <b>Open File</b> to select a text file from your computer. Its
+            contents will be loaded into the text area.
+          </li>
+          <li>
+            Edit the text as you like, then click <b>Save File</b> to save your
+            changes back to the same file.
+          </li>
+          <li>
+            <b>Note:</b> The File System Access API is only available in some
+            browsers (e.g., Chromium-based).
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

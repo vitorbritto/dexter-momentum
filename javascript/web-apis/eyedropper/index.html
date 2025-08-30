@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Web APIs - EyeDropper Experiment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>EyeDropper API Experiment</h1>
+      <div id="colorPreview">No color</div>
+      <button id="pickColorBtn">Pick a Color</button>
+      <div class="color-row">
+        <span>Selected Color:</span>
+        <span id="colorValue">None</span>
+      </div>
+      <div id="eyedropper-support" style="display: none">
+        Sorry, your browser does not support the EyeDropper API.
+      </div>
+      <section class="instructions">
+        <strong>Instructions:</strong>
+        <ul>
+          <li>
+            Click <b>Pick a Color</b> and use the eyedropper tool to select any
+            color from your screen.
+          </li>
+          <li>
+            The selected color will be shown above and its hex value displayed.
+          </li>
+          <li>
+            <b>Note:</b> The EyeDropper API is only available in some browsers
+            (e.g., Chromium-based).
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Web APIs - Font Loading Experiment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Font Loading API Experiment</h1>
+      <div class="font-demo-row">
+        <span id="demoText" style="font-size: 2rem"
+          >The quick brown fox jumps over the lazy dog.</span
+        >
+      </div>
+      <div class="font-controls">
+        <label for="fontSelect">Choose a font to load:</label>
+        <select id="fontSelect">
+          <option value="Lobster">Lobster</option>
+          <option value="Oswald">Oswald</option>
+        </select>
+        <button id="loadFontBtn">Load Font</button>
+      </div>
+      <p id="fontStatus"></p>
+      <section
+        class="instructions"
+        style="margin-top: 32px; color: #334155; font-size: 0.98rem"
+      >
+        <strong>Instructions:</strong>
+        <ul style="margin: 8px 0 0 18px">
+          <li>
+            Select a font from the dropdown and click <b>Load Font</b> to load
+            it using the Font Loading API.
+          </li>
+          <li>
+            The demo text above will update to use the loaded font if
+            successful.
+          </li>
+          <li>
+            The status message will indicate whether the font was loaded and
+            applied.
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
