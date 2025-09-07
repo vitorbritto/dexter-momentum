@@ -1,0 +1,24 @@
+# React Router - How-Tos
+
+- **Accessibility:** https://reactrouter.com/how-to/accessibility
+- **Client Data:** https://reactrouter.com/how-to/client-data
+- **Error Boundaries (framework, data):** https://reactrouter.com/how-to/error-boundary
+- **Error Reporting:** https://reactrouter.com/how-to/error-reporting
+- **Using Fetchers:** https://reactrouter.com/how-to/fetchers
+- **File Route Conventions:** https://reactrouter.com/how-to/file-route-conventions
+- **File Uploads:** https://reactrouter.com/how-to/file-uploads
+- **Form Validation:** https://reactrouter.com/how-to/form-validation
+- **HTTP Headers:** https://reactrouter.com/how-to/headers
+- **Middleware 🧪:** https://reactrouter.com/how-to/middleware
+- **Navigation Blocking:** https://reactrouter.com/how-to/navigation-blocking
+- **Pre-Rendering:** https://reactrouter.com/how-to/pre-rendering
+- **Presets:** https://reactrouter.com/how-to/presets
+- **React Server Components 🧪:** https://reactrouter.com/how-to/react-server-components
+- **Resource Routes:** https://reactrouter.com/how-to/resource-routes
+- **Route Module Type Safety:** https://reactrouter.com/how-to/route-module-type-safety
+- **Security:** https://reactrouter.com/how-to/security
+- **Server Bundles:** https://reactrouter.com/how-to/server-bundles
+- **Single Page App (SPA):** https://reactrouter.com/how-to/spa
+- **Status Codes:** https://reactrouter.com/how-to/status-codes
+- **Streaming with Suspense:** https://reactrouter.com/how-to/suspense
+- **View Transitions:** https://reactrouter.com/how-to/view-transitions
