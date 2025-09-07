@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense, lazy } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
@@ -6,72 +6,111 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import "./index.css";
 
 // App
-import App from "./App.tsx";
+const App = lazy(() => import("./App.tsx"));
 
 // Layouts
-import DefaultLayout from "./layout/DefaultLayout.tsx";
-import ProductsLayout from "./layout/ProductsLayout.tsx";
+const DefaultLayout = lazy(() => import("./layout/DefaultLayout.tsx"));
+const ProductsLayout = lazy(() => import("./layout/ProductsLayout.tsx"));
 
 // Not Found
-import NotFound from "./pages/NotFound.tsx";
+const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 // Corporate
-import About from "./pages/About.tsx";
-import Contact from "./pages/Contact.tsx";
-import Report from "./pages/Report.tsx";
-import Home from "./pages/Home.tsx";
+const About = lazy(() => import("./pages/About.tsx"));
+const Contact = lazy(() => import("./pages/Contact.tsx"));
+const Report = lazy(() => import("./pages/Report.tsx"));
+const Home = lazy(() => import("./pages/Home.tsx"));
 
 // Account
-import Account from "./pages/Account.tsx";
-import Profile from "./pages/Profile.tsx";
-import Settings from "./pages/Settings.tsx";
+const Account = lazy(() => import("./pages/Account.tsx"));
+const Profile = lazy(() => import("./pages/Profile.tsx"));
+const Settings = lazy(() => import("./pages/Settings.tsx"));
 
 // Products
-import ViewProduct from "./pages/Products/ViewProduct.tsx";
-import EditProduct from "./pages/Products/EditProduct.tsx";
-import ListProducts from "./pages/Products/ListProducts.tsx";
+const ViewProduct = lazy(() => import("./pages/Products/ViewProduct.tsx"));
+const ListProducts = lazy(() => import("./pages/Products/ListProducts.tsx"));
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <Suspense fallback={<div>Carregando...</div>}>
+        <App />
+      </Suspense>
+    ),
     children: [
       {
-        element: <DefaultLayout />,
+        element: (
+          <Suspense fallback={<div>Carregando layout...</div>}>
+            <DefaultLayout />
+          </Suspense>
+        ),
         children: [
           {
             index: true,
-            element: <Home />,
+            element: (
+              <Suspense fallback={<div>Carregando página inicial...</div>}>
+                <Home />
+              </Suspense>
+            ),
           },
           {
             path: "account",
-            element: <Account />,
+            element: (
+              <Suspense fallback={<div>Carregando conta...</div>}>
+                <Account />
+              </Suspense>
+            ),
             children: [
               {
                 path: "profile",
-                element: <Profile />,
+                element: (
+                  <Suspense fallback={<div>Carregando perfil...</div>}>
+                    <Profile />
+                  </Suspense>
+                ),
               },
               {
                 path: "settings",
-                element: <Settings />,
+                element: (
+                  <Suspense fallback={<div>Carregando configurações...</div>}>
+                    <Settings />
+                  </Suspense>
+                ),
               },
             ],
           },
           {
             path: "about",
-            element: <About />,
+            element: (
+              <Suspense fallback={<div>Carregando sobre...</div>}>
+                <About />
+              </Suspense>
+            ),
           },
           {
             path: "contact",
-            element: <Contact />,
+            element: (
+              <Suspense fallback={<div>Carregando contato...</div>}>
+                <Contact />
+              </Suspense>
+            ),
           },
           {
             path: "report",
-            element: <Report />,
+            element: (
+              <Suspense fallback={<div>Carregando relatório...</div>}>
+                <Report />
+              </Suspense>
+            ),
           },
           {
             path: "*",
-            element: <NotFound />,
+            element: (
+              <Suspense fallback={<div>Página não encontrada...</div>}>
+                <NotFound />
+              </Suspense>
+            ),
           },
         ],
       },
@@ -79,19 +118,47 @@ const router = createBrowserRouter([
         path: "products",
         children: [
           {
-            element: <ProductsLayout />,
+            element: (
+              <Suspense fallback={<div>Carregando produtos...</div>}>
+                <ProductsLayout />
+              </Suspense>
+            ),
             children: [
               {
                 index: true,
-                element: <ListProducts />,
+                element: (
+                  <Suspense
+                    fallback={<div>Carregando lista de produtos...</div>}
+                  >
+                    <ListProducts />
+                  </Suspense>
+                ),
+                loader: async () => {
+                  const response = await fetch(
+                    "https://dummyjson.com/products?limit=5"
+                  );
+                  const products = await response.json();
+
+                  return products;
+                },
               },
               {
                 path: ":pid",
-                element: <ViewProduct />,
-              },
-              {
-                path: ":pid/edit",
-                element: <EditProduct />,
+                element: (
+                  <Suspense fallback={<div>Carregando produto...</div>}>
+                    <ViewProduct />
+                  </Suspense>
+                ),
+                loader: async ({ params }) => {
+                  const { pid } = params;
+                  const response = await fetch(
+                    `https://dummyjson.com/products/${pid}`
+                  );
+                  const product = await response.json();
+                  console.log("🚀 ~ product:", product);
+
+                  return product;
+                },
               },
             ],
           },
@@ -103,6 +170,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Suspense fallback={<div>Carregando aplicação...</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
   </StrictMode>
 );
