@@ -42,8 +42,19 @@ This "element" has the following properties:
     },
     key:"",         // The key of the element to create.
     ref:""          // The ref of the element to create.
+    _owner: null,   // The owner of the element to create.
+    _store: {}      // The store of the element to create.
 }
 ```
+
+**Breaking Down the Output**
+
+- `type` → This tells React that element is a kind of HTML tag. Example: `div`, `h1`, `button`, etc.
+- `props` → This contains the attributes (like className, onClick, or id...) and child elements. Children is the content inside of the `div` tag.
+- `key` → If you've ever rendered a list with the map() function, then you've probably seen this. Key is essential in some cases. We will see an actual use-case of -key in this blog. You will also learn why key prop is so important in React.
+- `ref` → Ref is used to directly access and interact with the DOM. If you've ever used the useRef() hook, then you know this.
+- `_owner` → This property is used by React for tracking which component is responsible for creating an element during debugging. It helps React determine the source of errors in development mode. Usually not accessed directly in application code.
+- `_store` → Another internal React property used for storing metadata about the element. Can contain information about validation, warnings, etc.
 
 ## Example
 
