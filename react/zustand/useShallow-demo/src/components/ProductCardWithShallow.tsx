@@ -79,3 +79,9 @@ const ProductCardWithShallow: React.FC<ProductCardWithShallowProps> = ({
 
 export default ProductCardWithShallow;
 
+
+
+
+
+
+

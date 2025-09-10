@@ -78,3 +78,9 @@ const ProductCardWithoutShallow: React.FC<ProductCardWithoutShallowProps> = ({
 
 export default ProductCardWithoutShallow;
 
+
+
+
+
+
+

@@ -1,0 +1,2 @@
+- A special component to handle data loading or _lazy loading_.
+- Allows showing fallbacks (like a spinner) until the data is ready.

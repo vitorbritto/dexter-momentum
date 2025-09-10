@@ -1,0 +1,2 @@
+- Alternative to _prop drilling_ for sharing data across different levels of the component tree.
+- Involves creating a Context, wrapping data in a Provider, and accessing it with useContext.

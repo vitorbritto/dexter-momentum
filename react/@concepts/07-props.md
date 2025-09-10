@@ -31,3 +31,13 @@ const MyComponent = ({ children }) => <div>{children}</div>;
   <p>Hello</p>
 </MyComponent>;
 ```
+
+## In Summary
+
+- Props are the data that is passed to a component.
+- They are passed as attributes to the component.
+- They are read-only.
+- They are immutable.
+- Work like custom attributes in components.
+- Can be any type of data, even other components.
+- The children prop is a special one used for composition.

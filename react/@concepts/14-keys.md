@@ -1,0 +1,2 @@
+- A special prop used by React to identify unique elements in lists (usually with .map).
+- Required to optimize the rendering process.

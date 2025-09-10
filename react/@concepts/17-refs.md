@@ -1,0 +1,2 @@
+- Used to directly manipulate DOM elements.
+- Example: focusing an input without relying on state flow.

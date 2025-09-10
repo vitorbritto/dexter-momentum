@@ -1,0 +1,2 @@
+- Components should be pure functions: same input → same output.
+- Do not modify variables or objects outside the render cycle.

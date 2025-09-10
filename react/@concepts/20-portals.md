@@ -1,0 +1,2 @@
+- Allow rendering components into other DOM elements.
+- Commonly used for _modals_, _tooltips_, and _dropdowns_.

@@ -1,4 +1,4 @@
-# JSX (JavaScript Syntax Extension)
+# JSX (JavaScript XML)
 
 JSX is a syntax extension for JavaScript that allows you to write HTML-like code in your JavaScript files.
 
@@ -18,12 +18,13 @@ This function is used to create a React Element.
 
 ```js
 React.createElement(type, props, ...children);
-
-// Where:
-// - type: The type of the element to create. This can be a string (like "div") or a component function (like `UserCard`).
-// - props: The properties of the element to create. This can be a object with key-value pairs (like `{ className: "container" }`).
-// - children: The children of the element to create. This can be a string (like "Hello") or a component function (like `UserCard`).
 ```
+
+**Where:**
+
+- `type`: The type of the element to create. This can be a string (like "div") or a component function (like `UserCard`).
+- `props`: The properties of the element to create. This can be a object with key-value pairs (like `{ className: "container" }`).
+- `children`: The children of the element to create. This can be a string (like "Hello") or a component function (like `UserCard`).
 
 ### The Skeleton of a React Element
 
@@ -122,3 +123,14 @@ console.log("🚀 ~ element:", element);
 </div>
 <button onclick="alert('Button Clicked!')">Click Me</button>
 ```
+
+## In Summary
+
+- JSX is a syntax extension for JavaScript that allows you to write HTML-like code in your JavaScript files.
+- It is used to describe the UI of your application.
+- It is converted to React.createElement() function by Babel.
+- It is a more readable and easier to write than React.createElement().
+- It is an alternative to React.createElement, which is more verbose.
+- Uses `camelCase` attributes (e.g., className instead of class).
+- Allows inserting dynamic values using `{}`.
+- Styles can be applied as JavaScript objects inside curly braces.

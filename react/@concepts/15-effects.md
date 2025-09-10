@@ -1,0 +1,2 @@
+- Code that interacts with external systems (APIs, browser APIs).
+- Can run inside _event handlers_ or in useEffect.

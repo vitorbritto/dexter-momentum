@@ -1,0 +1,2 @@
+- A strategy for organizing components in a reusable way.
+- Very common in layouts that receive children through the children prop.

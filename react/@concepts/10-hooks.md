@@ -127,3 +127,14 @@ useLayoutEffect(() => {
   console.log("useLayoutEffect");
 }, []);
 ```
+
+## In Summary
+
+- Hooks are a way to use state and other React features in functional components.
+- They are a more modern way to use state and other React features in functional components.
+- The most commonly used are: useState, useEffect, useRef.
+- **State Hooks**: useState, useReducer → Manage state.
+- **Context Hooks**: useContext → Share data without prop drilling.
+- **Ref Hooks**: useRef → Access DOM elements directly.
+- **Effect Hooks**: useEffect → Handle side effects, such as API calls.
+- **Performance Hooks**: useMemo, useCallback → Optimize re-renders.
