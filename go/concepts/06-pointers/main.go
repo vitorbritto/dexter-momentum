@@ -9,12 +9,34 @@ import "fmt"
 // & -> Address of
 // * -> Value of
 
-func main() {
-	num := 10
-	numPtr := &num // Pointer to num
-	fmt.Println(numPtr) // -> Address of num
-	fmt.Println(*numPtr) // -> Dereferencing
+type User struct {
+	Name  string
+	Email string
+}
 
-	*numPtr = 20 // -> Assigning value to num
-	fmt.Println(num) // -> Value of num
+// Pass by value
+// - The function receives a copy of the user struct
+// - The function does not modify the original user struct
+// - The function does not return a value
+func PrintUser(u User) {
+	fmt.Println(u.Name, u.Email)
+}
+
+// Pass by reference
+// - The function receives a pointer to the user struct
+// - The function can modify the original user struct
+// - The function can return a value
+// - The function can modify the original user struct
+func PrintUserPtr(u *User) {
+	fmt.Println(u.Name, u.Email)
+}
+
+func main() {
+	user := User{
+		Name:  "John Doe",
+		Email: "john.doe@example.com",
+	}
+
+	PrintUser(user)
+	PrintUserPtr(&user)
 }
