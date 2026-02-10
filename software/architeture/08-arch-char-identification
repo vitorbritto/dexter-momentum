@@ -1,0 +1,270 @@
+# Identificando Características Arquiteturais
+
+Identificar as **características arquiteturais** que mais “puxam” o desenho do sistema é um dos primeiros passos para criar uma arquitetura (ou avaliar se uma arquitetura existente faz sentido). Identificar as **características corretas** (“-ilidades”) para um problema ou aplicação exige do arquiteto não apenas entender o domínio, mas também **colaborar com as pessoas do domínio** para descobrir o que é realmente importante do ponto de vista do negócio.
+
+Um arquiteto encontra características arquiteturais de, pelo menos, três formas, extraindo-as de:
+- **preocupações do domínio**,
+- **requisitos**,
+- **conhecimento implícito do domínio**.
+
+## Extraindo Características Arquiteturais a partir de Preocupações do Domínio
+
+O arquiteto precisa **traduzir preocupações do domínio** para identificar as características arquiteturais certas. Por exemplo: o principal é **escalabilidade**, ou é **tolerância a falhas**, **segurança**, ou **performance**? Talvez o sistema exija as quatro.
+
+Entender os objetivos e a situação do domínio permite traduzir essas preocupações em "-ilities", o que vira a base para decisões arquiteturais **corretas e justificáveis**.
+
+### Dica prática: manter a lista curta
+
+Ao colaborar com stakeholders do domínio para definir as características arquiteturais, vale **trabalhar forte para manter a lista final o mais curta possível**.
+
+Um antipadrão comum é tentar desenhar uma arquitetura genérica que suporte **todas** as características. Cada característica que a arquitetura precisa suportar adiciona complexidade ao design. Se tentar suportar "característica demais", a complexidade cresce antes mesmo de começar a resolver o problema real do domínio — que é a razão de existir do software.
+
+Não se trata de obsessão por quantidade, mas sim de **manter o design simples**.
+
+
+## Estudo de Caso: O Vasa
+
+Uma história clássica sobre "superespecificar" características e acabar matando um projeto é o **Vasa**, um navio de guerra sueco construído entre 1626 e 1628.
+
+O rei queria o navio mais magnífico já criado. Até então, navios eram ou transporte de tropas ou navios de guerra — o Vasa seria os dois. A maioria tinha um convés — o Vasa teria dois. Canhões eram enormes — os do Vasa seriam o dobro do tamanho.
+
+Apesar das preocupações dos construtores (que não podiam dizer "não" ao rei Adolphus), o navio foi concluído. Na cerimônia, ele saiu para o porto e disparou uma salva de canhões de um lado.
+
+Como era **top-heavy** (peso concentrado alto demais), o navio **virou e afundou** no fundo da baía. No início do século XX, ele foi resgatado e hoje fica em um museu em Estocolmo.
+
+
+## Priorizar "tudo" é uma armadilha
+
+Muitos arquitetos e stakeholders querem **priorizar toda a lista** de características arquiteturais que o sistema precisa suportar. Isso parece desejável, mas, na maioria dos casos, é **perda de tempo** e gera frustração e briga desnecessária.
+
+É raro todo mundo concordar com a prioridade de cada característica.
+
+### Abordagem melhor
+Pedir para os stakeholders escolherem as **3 características mais importantes** da lista final (em qualquer ordem).
+
+Isso:
+- facilita consenso,
+- força uma discussão produtiva sobre o que importa,
+- ajuda o arquiteto a analisar trade-offs nas decisões importantes.
+
+
+## "Perdido na tradução" entre domínio e arquitetura
+
+A maioria das características arquiteturais nasce de ouvir stakeholders e colaborar com eles. O problema é que **arquitetos e stakeholders falam línguas diferentes**.
+
+- **Arquitetos falam**: escalabilidade, interoperabilidade, tolerância a falhas, facilidade de aprendizado (learnability), disponibilidade.
+- **Stakeholders falam**: fusões e aquisições, satisfação do usuário, time-to-market, vantagem competitiva.
+
+Isso cria um efeito "perdido na tradução". Arquitetos não sabem como "arquitetar" para "satisfação do usuário" diretamente; stakeholders não entendem por que a conversa gira em torno de disponibilidade, interoperabilidade etc.
+
+A boa notícia: normalmente existe uma tradução de **preocupações do domínio** para **características arquiteturais**.
+
+### Tradução comum: preocupações → "-ilities"
+
+| Preocupação do domínio | Características arquiteturais |
+|---|---|
+| Fusões e aquisições | Interoperabilidade, escalabilidade, adaptabilidade, extensibilidade |
+| Time-to-market | Agilidade, testabilidade, deployabilidade |
+| Satisfação do usuário | Performance, disponibilidade, tolerância a falhas, testabilidade, deployabilidade, agilidade, segurança |
+| Vantagem competitiva | Agilidade, testabilidade, deployabilidade, escalabilidade, disponibilidade, tolerância a falhas |
+| Tempo e orçamento | Simplicidade, viabilidade |
+
+**Observação importante:** **agilidade não é igual a time-to-market**. Na prática, é **agilidade + testabilidade + deployabilidade**. Focar em só um ingrediente é como esquecer a farinha na massa do bolo.
+
+#### Exemplo de tradução mal feita
+Stakeholder: "Por exigência regulatória, é obrigatório completar o cálculo do preço de fundos no fim do dia no horário."
+
+Um arquiteto fraco pode focar só em **performance**. Mas isso falha por vários motivos:
+1. Não adianta ser rápido se o sistema não estiver **disponível** quando necessário.
+2. Com crescimento do domínio, precisa **escalar** para continuar batendo o prazo.
+3. Precisa ser **confiável** para não cair no meio do cálculo.
+4. Se cair com 85% feito, precisa **recuperar e retomar** de onde parou.
+5. E precisa garantir **correção e auditabilidade** do resultado.
+
+Logo, além de performance, precisa focar também em: **disponibilidade, escalabilidade, confiabilidade, recuperabilidade e auditabilidade**.
+
+
+## Extraindo Características Arquiteturais a partir de Requisitos
+
+Algumas características aparecem explicitamente em documentos de requisitos (por exemplo, número esperado de usuários, volumes, picos).
+
+Outras vêm do **conhecimento do domínio** que o arquiteto traz. Exemplo: um sistema de matrícula universitária.
+
+Se a faculdade tem 1.000 alunos e 10 horas de matrícula, o sistema deve assumir distribuição uniforme? Ou deve aguentar os 1.000 alunos tentando se matricular nos últimos 10 minutos?
+
+Quem conhece hábitos de estudantes (procrastinação) sabe a resposta. Detalhes assim raramente aparecem nos requisitos, mas influenciam decisões de design/arquitetura.
+
+
+## A origem das Architecture Katas (Katas)
+
+Há alguns anos, Ted Neward criou as **architecture katas**, uma forma de treinar arquitetos a derivar características arquiteturais a partir de descrições do domínio.
+
+Em artes marciais japonesas, **kata** é um exercício individual com foco em forma e técnica.
+
+> "Como formar grandes designers? Grandes designers projetam." — Fred Brooks
+
+Mas arquitetos geralmente têm poucas chances reais de arquitetar ao longo da carreira. As katas resolvem isso com prática deliberada.
+
+### Como funciona
+- Um problema é apresentado em termos do domínio.
+- Inclui "contexto adicional" (coisas que não aparecem em requisitos, mas impactam design).
+- Times pequenos trabalham por 45 minutos.
+- Apresentam resultados; outros grupos votam na melhor arquitetura.
+
+### Estrutura típica de uma kata
+- **Descrição:** problema geral do domínio
+- **Usuários:** número/tipos esperados
+- **Requisitos:** requisitos em linguagem do domínio
+- **Contexto adicional:** considerações implícitas do domínio que afetam o design
+
+
+## Estudo de Caso: Silicon Sandwiches
+
+### Descrição
+Uma rede nacional de sanduíches quer habilitar pedidos online (além do modelo atual por telefone).
+
+### Usuários
+Milhares, talvez um dia milhões.
+
+### Requisitos
+- Usuário faz pedido, recebe horário para retirada e direções até a loja (com opção de integrar com serviços externos de mapas com trânsito).
+- Se houver entrega, despachar o motorista com o sanduíche.
+- Acessibilidade por dispositivos móveis.
+- Promoções diárias nacionais.
+- Promoções diárias locais.
+- Pagamento online, presencial ou na entrega.
+
+### Contexto adicional
+- Lojas franqueadas, cada uma com um dono diferente.
+- Expansão para fora do país no futuro próximo.
+- Objetivo corporativo: contratar mão de obra barata para maximizar lucro.
+
+
+## Como derivar características arquiteturais nesse cenário
+
+O arquiteto não precisa desenhar o sistema inteiro aqui. Precisa identificar o que impacta a estrutura do sistema.
+
+Primeiro passo: separar candidatas em **explícitas** e **implícitas**.
+
+
+## Características Explícitas
+
+Características explícitas aparecem na especificação como parte do design necessário.
+
+### Escalabilidade
+O número de usuários ("milhares, talvez milhões") grita **escalabilidade**: suportar muitos usuários concorrentes sem degradação séria.
+
+Note: o problema não diz "seja escalável"; ele expressa isso como expectativa de usuários. O arquiteto precisa "decodificar" linguagem do domínio em equivalentes de engenharia.
+
+### Elasticidade (implícita, mas derivável)
+Também é provável precisar de **elasticidade**: aguentar **picos** de tráfego.
+
+Escalabilidade e elasticidade são parecidas, mas diferentes:
+- **Escalabilidade**: muitos usuários concorrentes de forma sustentada.
+- **Elasticidade**: picos e rajadas de tráfego.
+
+Um sistema pode ser escalável sem ser elástico. Exemplo:
+- Hotel: tráfego mais constante.
+- Ingressos de show: rajadas enormes quando abre venda.
+
+No caso de sanduíches, é razoável esperar picos nas refeições (almoço/jantar). Então elasticidade é um ponto importante, mesmo sem estar escrito.
+
+### Análise rápida dos requisitos
+
+1. Integração com serviços externos de mapas  
+Isso implica integração e possíveis impactos em **confiabilidade**. Se o serviço externo falhar, o sistema fica frágil?  
+Pergunta arquitetural: se o serviço de trânsito cair, o site deve falhar ou apenas oferecer direções sem trânsito?
+
+2. Entrega com despacho de motorista  
+Nada especial em termos de características arquiteturais.
+
+3. Acesso mobile  
+Afeta bastante o design (web responsiva vs apps nativos). Com restrição de custo e simplicidade, tende a apontar para **web mobile-optimized**.  
+Pode exigir metas específicas de **performance** (tempo de carregamento etc.), e isso deve ser discutido com UX e stakeholders.
+
+4. Promoções nacionais e promoções locais  
+Isso sugere **customizabilidade** (comportamento variando por local).  
+Uma arquitetura tipo **microkernel** pode suportar isso muito bem via plugins, mas também dá para fazer com padrões de design (ex.: Template Method). Aqui entra trade-off.
+
+5. Pagamento online/presencial/entrega  
+Pagamento online sugere **segurança**, mas nada indica exigência extraordinária além do esperado.
+
+6. Franquias com donos diferentes  
+Pode impor restrição de custo e exigir avaliar **viabilidade** (custo, prazo, skills do time), talvez favorecendo uma arquitetura mais simples.
+
+7. Expansão internacional  
+Implica **internacionalização (i18n)**. Normalmente direciona decisões de design, sem exigir estrutura arquitetural específica (mas influencia).
+
+8. Mão de obra barata  
+Sinaliza preocupação com **usabilidade** e simplicidade operacional, mais ligado a design do que a características estruturais.
+
+### Performance
+Ninguém quer comprar de um site lento, especialmente em pico.  
+Mas performance é um conceito com nuances: "performance do quê?" (latência? throughput? p95? página mobile? etc.). Isso precisa ser definido com cuidado.
+
+Performance também precisa ser definida junto com escalabilidade:
+- baseline sem carga,
+- comportamento sob carga,
+- o que é "aceitável" em cada nível de usuários.
+
+Características arquiteturais interagem, então muitas vezes são definidas **em relação umas às outras**.
+
+
+## Características Implícitas
+
+Muitas características não vêm escritas em requisitos, mas influenciam o design.
+
+- **Disponibilidade**: garantir que usuários consigam acessar o site.
+- **Confiabilidade**: garantir que o site não caia durante a compra (ninguém quer perder conexão e precisar logar de novo).
+- **Segurança**: sempre é implícita. Só vira uma característica arquitetural prioritária se for crítica e exigir estrutura específica.
+
+No caso Silicon Sandwiches, uma suposição plausível é delegar pagamento a um terceiro. Assim, seguindo boas práticas (não trafegar cartão em texto puro, não armazenar demais etc.), talvez não seja necessário um desenho estrutural especial só para segurança — um bom design e higiene de segurança podem bastar.
+
+A interação entre características também cria a armadilha de **superespecificar**: tão ruim quanto subespecificar, porque complica o sistema sem necessidade.
+
+### Customizabilidade como "última" característica maior
+Vários pontos indicam comportamento customizado: receitas, promoções locais, direções potencialmente ajustáveis por local.  
+Isso pode ser tratado como design ou como estrutura arquitetural — depende do quanto o domínio exige suporte estrutural.
+
+E entra o lembrete:
+
+> Não existem respostas erradas em arquitetura — só respostas caras.
+
+
+## Design versus Arquitetura e Trade-offs
+
+No caso da customizabilidade, surge a pergunta: isso é **arquitetura** ou **design**?
+
+- Arquitetura implica **estrutura**.
+- Design vive **dentro** dessa estrutura.
+
+Dá para:
+- escolher microkernel e dar suporte estrutural para plugins, ou
+- escolher outro estilo e implementar customização no design via **Template Method**.
+
+Qual é melhor? Depende:
+- há motivos (performance, acoplamento) para evitar microkernel?
+- outras características ficam mais difíceis em um desenho do que no outro?
+- qual o custo de suportar as características em cada abordagem?
+
+Esse tipo de análise de trade-off é parte central do trabalho de arquitetura.
+
+### Colaboração é obrigatória
+Decisões não devem ser tomadas isoladamente do time de implementação (evitar o antipadrão do **Arquiteto da Torre de Marfim**).  
+No Silicon Sandwiches, arquiteto, tech lead, devs e analistas devem decidir juntos como implementar customizabilidade.
+
+
+## Exercício para simplificar: eliminar a menos importante
+
+Depois da primeira lista de características, fazer um exercício:
+> "Se precisar eliminar uma, qual seria?"
+
+Normalmente dá para cortar alguma explícita, porque implícitas sustentam o sucesso geral.
+
+No Silicon Sandwiches, uma resposta plausível:
+- remover **customizabilidade** como característica arquitetural e tratar como design, ou
+- considerar **performance** como a menos crítica entre as operacionais (sem fazer algo lento de propósito, mas sem priorizá-la acima de escalabilidade ou disponibilidade).
+
+Por fim, o lembrete final:
+- não existe "melhor design" em arquitetura,
+- existe o **conjunto de trade-offs menos pior** para o contexto.
