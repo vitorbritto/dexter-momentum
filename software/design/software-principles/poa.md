@@ -1,1 +1,0 @@
-# Program Against Abstractions (PoA)
